@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Jane&#39;StudyHome</title>
+  
+  <subtitle>NAOrobots and I,forever.</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://sisterChen.github.io/"/>
+  <updated>2018-05-22T12:51:41.410Z</updated>
+  <id>https://sisterChen.github.io/</id>
+  
+  <author>
+    <name>chenfanghui</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sayings</title>
+    <link href="https://sisterChen.github.io/2018/05/17/sayings/"/>
+    <id>https://sisterChen.github.io/2018/05/17/sayings/</id>
+    <published>2018-05-17T03:49:38.000Z</published>
+    <updated>2018-05-22T12:51:41.410Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="每个不曾起舞的日子，都是对生命的辜负"><a href="#每个不曾起舞的日子，都是对生命的辜负" class="headerlink" title="每个不曾起舞的日子，都是对生命的辜负"></a>每个不曾起舞的日子，都是对生命的辜负</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;每个不曾起舞的日子，都是对生命的辜负&quot;&gt;&lt;a href=&quot;#每个不曾起舞的日子，都是对生命的辜负&quot; class=&quot;headerlink&quot; title=&quot;每个不曾起舞的日子，都是对生命的辜负&quot;&gt;&lt;/a&gt;每个不曾起舞的日子，都是对生命的辜负&lt;/h1&gt;
+      
+    
+    </summary>
+    
+      <category term="home" scheme="https://sisterChen.github.io/categories/home/"/>
+    
+    
+      <category term="about" scheme="https://sisterChen.github.io/tags/about/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>the first post</title>
+    <link href="https://sisterChen.github.io/2018/05/13/the-first-post/"/>
+    <id>https://sisterChen.github.io/2018/05/13/the-first-post/</id>
+    <published>2018-05-13T15:20:47.000Z</published>
+    <updated>2018-05-22T14:32:58.192Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="这个博客建立的初衷"><a href="#这个博客建立的初衷" class="headerlink" title="这个博客建立的初衷"></a>这个博客建立的初衷</h1><h2 id="把过去一年在NAO机器人团队学过的东西系统整理"><a href="#把过去一年在NAO机器人团队学过的东西系统整理" class="headerlink" title="把过去一年在NAO机器人团队学过的东西系统整理"></a>把过去一年在NAO机器人团队学过的东西系统整理</h2><h3 id="虽然我们因种种原因无法继续参赛了，但我想这些东西是值得以后继续探究的，我也会带着一些疑问去学习相关的专业科目，或许理解会更深入。而且越来越多的学校购买NAO，也将会有越来越多的团队参加RoboCup-SPL这个比赛，这些资料希望会有一些参考价值"><a href="#虽然我们因种种原因无法继续参赛了，但我想这些东西是值得以后继续探究的，我也会带着一些疑问去学习相关的专业科目，或许理解会更深入。而且越来越多的学校购买NAO，也将会有越来越多的团队参加RoboCup-SPL这个比赛，这些资料希望会有一些参考价值" class="headerlink" title="虽然我们因种种原因无法继续参赛了，但我想这些东西是值得以后继续探究的，我也会带着一些疑问去学习相关的专业科目，或许理解会更深入。而且越来越多的学校购买NAO，也将会有越来越多的团队参加RoboCup/SPL这个比赛，这些资料希望会有一些参考价值~~"></a>虽然我们因种种原因无法继续参赛了，但我想这些东西是值得以后继续探究的，我也会带着一些疑问去学习相关的专业科目，或许理解会更深入。而且越来越多的学校购买NAO，也将会有越来越多的团队参加RoboCup/SPL这个比赛，这些资料希望会有一些参考价值~~</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;这个博客建立的初衷&quot;&gt;&lt;a href=&quot;#这个博客建立的初衷&quot; class=&quot;headerlink&quot; title=&quot;这个博客建立的初衷&quot;&gt;&lt;/a&gt;这个博客建立的初衷&lt;/h1&gt;&lt;h2 id=&quot;把过去一年在NAO机器人团队学过的东西系统整理&quot;&gt;&lt;a href=&quot;#把过
+      
+    
+    </summary>
+    
+      <category term="home" scheme="https://sisterChen.github.io/categories/home/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://sisterChen.github.io/2018/05/13/hello-world/"/>
+    <id>https://sisterChen.github.io/2018/05/13/hello-world/</id>
+    <published>2018-05-13T02:59:41.958Z</published>
+    <updated>2018-05-13T02:59:41.959Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

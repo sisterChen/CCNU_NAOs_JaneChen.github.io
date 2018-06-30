@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Bhuman," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jane'StudyHome" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="整体框架结构分析(基于Bhuman2013)">
+<meta name="keywords" content="Bhuman">
+<meta property="og:type" content="article">
+<meta property="og:title" content="B-Human framework">
+<meta property="og:url" content="https://sisterChen.github.io/2018/06/30/B-Human-framework/index.html">
+<meta property="og:site_name" content="Jane&#39;StudyHome">
+<meta property="og:description" content="整体框架结构分析(基于Bhuman2013)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-30T15:31:27.704Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="B-Human framework">
+<meta name="twitter:description" content="整体框架结构分析(基于Bhuman2013)">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://sisterChen.github.io/2018/06/30/B-Human-framework/"/>
+
+
+
+
+
+  <title>B-Human framework | Jane'StudyHome</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jane'StudyHome</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">NAOrobots and I,forever.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-robocupspl">
+          <a href="/RoboCupSPL/" rel="section">
+            
+            RoboCupSPL
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://sisterChen.github.io/2018/06/30/B-Human-framework/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenfanghui">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jane'StudyHome">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">B-Human framework</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-30T10:47:17+08:00">
+                2018-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/home/" itemprop="url" rel="index">
+                    <span itemprop="name">home</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  整体框架结构分析(基于Bhuman2013)
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="动作相关的几个引擎"><a href="#动作相关的几个引擎" class="headerlink" title="动作相关的几个引擎"></a>动作相关的几个引擎</h1><h3 id="ArmMotionEngine"><a href="#ArmMotionEngine" class="headerlink" title="ArmMotionEngine"></a>ArmMotionEngine</h3><h3 id="GetUpEngine"><a href="#GetUpEngine" class="headerlink" title="GetUpEngine"></a>GetUpEngine</h3><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="SimRobot-虚拟环境"><a href="#SimRobot-虚拟环境" class="headerlink" title="SimRobot (虚拟环境)"></a>SimRobot (虚拟环境)</h2><h2 id="Bush"><a href="#Bush" class="headerlink" title="Bush"></a>Bush</h2><pre><code>部署代码            设置机器
+</code></pre><h2 id="GameController-担当裁判的功能"><a href="#GameController-担当裁判的功能" class="headerlink" title="GameController (担当裁判的功能)"></a>GameController (担当裁判的功能)</h2><h1 id="BHuman的使用"><a href="#BHuman的使用" class="headerlink" title="BHuman的使用"></a>BHuman的使用</h1><h2 id="在NAO中部署libhuamn"><a href="#在NAO中部署libhuamn" class="headerlink" title="在NAO中部署libhuamn"></a><em>在NAO中部署libhuamn</em></h2><h3 id="1、准备NaoQi"><a href="#1、准备NaoQi" class="headerlink" title="1、准备NaoQi"></a>1、准备NaoQi</h3><h3 id="2、创建配置"><a href="#2、创建配置" class="headerlink" title="2、创建配置"></a>2、创建配置</h3><h3 id="3、管理无线网络配置"><a href="#3、管理无线网络配置" class="headerlink" title="3、管理无线网络配置"></a>3、管理无线网络配置</h3><h3 id="4、安装-编辑器sublime、JAVA环境等"><a href="#4、安装-编辑器sublime、JAVA环境等" class="headerlink" title="4、安装(编辑器sublime、JAVA环境等)"></a>4、安装(编辑器sublime、JAVA环境等)</h3><h3 id="5、将编译好的代码拷贝到NAO中"><a href="#5、将编译好的代码拷贝到NAO中" class="headerlink" title="5、将编译好的代码拷贝到NAO中"></a>5、将编译好的代码拷贝到NAO中</h3><h3 id="6、控制NAO中的Bhuman"><a href="#6、控制NAO中的Bhuman" class="headerlink" title="6、控制NAO中的Bhuman"></a>6、控制NAO中的Bhuman</h3><h2 id="SimRobot的使用"><a href="#SimRobot的使用" class="headerlink" title="SimRobot的使用"></a>SimRobot的使用</h2><h2 id="机器人的校准"><a href="#机器人的校准" class="headerlink" title="机器人的校准"></a>机器人的校准</h2><h3 id="1、颜色校准"><a href="#1、颜色校准" class="headerlink" title="1、颜色校准"></a>1、颜色校准</h3><h3 id="2、场地校准"><a href="#2、场地校准" class="headerlink" title="2、场地校准"></a>2、场地校准</h3><h3 id="3、关节校准"><a href="#3、关节校准" class="headerlink" title="3、关节校准"></a>3、关节校准</h3><h2 id="启动NaoQi和Bhuman"><a href="#启动NaoQi和Bhuman" class="headerlink" title="启动NaoQi和Bhuman"></a>启动NaoQi和Bhuman</h2><h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a><em>核心概念</em></h2><h3 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h3><h3 id="Representation"><a href="#Representation" class="headerlink" title="Representation"></a>Representation</h3><h3 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h3><h2 id="几个关注点"><a href="#几个关注点" class="headerlink" title="几个关注点"></a><em>几个关注点</em></h2><h3 id="通讯机制-Message-Queues"><a href="#通讯机制-Message-Queues" class="headerlink" title="通讯机制(Message Queues)"></a>通讯机制(Message Queues)</h3><h4 id="1、Inter-process-communication"><a href="#1、Inter-process-communication" class="headerlink" title="1、Inter-process communication"></a>1、Inter-process communication</h4><h4 id="2、debug-communication"><a href="#2、debug-communication" class="headerlink" title="2、debug communication"></a>2、debug communication</h4><h4 id="3、team-communication"><a href="#3、team-communication" class="headerlink" title="3、team communication"></a>3、team communication</h4><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><h4 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h4><h2 id="BHuman的工作方式"><a href="#BHuman的工作方式" class="headerlink" title="BHuman的工作方式"></a><em>BHuman的工作方式</em></h2><h3 id="Cognition-认知系统"><a href="#Cognition-认知系统" class="headerlink" title="Cognition(认知系统)"></a>Cognition(认知系统)</h3><h4 id="1、Perception-感知子系统"><a href="#1、Perception-感知子系统" class="headerlink" title="1、Perception(感知子系统)"></a>1、Perception(感知子系统)</h4><pre><code>提供信息
+    标志点        目标        边界线        球的位置和速度
+算法策略
+    颜色表        NAO形体轮廓        分段与区域构建        区域辨别
+    边界检测        目标检测        球检测        其他NAO机器人检测
+</code></pre><h4 id="2、Model-模型子系统"><a href="#2、Model-模型子系统" class="headerlink" title="2、Model(模型子系统)"></a>2、Model(模型子系统)</h4><pre><code>自我定位        球的跟踪
+障碍物建模（视觉判断、超声波定位、胳臂碰触定位、对方模型定位
+</code></pre><h4 id="3、Behavior-Control-行为控制子系统"><a href="#3、Behavior-Control-行为控制子系统" class="headerlink" title="3、Behavior Control(行为控制子系统)"></a><strong>3、Behavior Control(行为控制子系统)</strong></h4><pre><code>CABSL        Option        Library        角色(Roles)
+身体控制        头部控制        路径规划
+</code></pre><h3 id="Motion-运动系统"><a href="#Motion-运动系统" class="headerlink" title="Motion(运动系统)"></a>Motion(运动系统)</h3><h4 id="1、Sensing（数据采集"><a href="#1、Sensing（数据采集" class="headerlink" title="1、Sensing（数据采集)"></a>1、Sensing（数据采集)</h4><h4 id="2、Motion-Control-关节控制"><a href="#2、Motion-Control-关节控制" class="headerlink" title="2、Motion Control (关节控制)"></a>2、Motion Control (关节控制)</h4><pre><code>行走        特殊动作        爬起        跟球    
+动作合并        头部控制        胳臂控制
+</code></pre><h1 id="系统结构"><a href="#系统结构" class="headerlink" title="系统结构"></a>系统结构</h1><h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><h2 id="工具集"><a href="#工具集" class="headerlink" title="工具集"></a>工具集</h2><pre><code>Bush(查看机器人的当前情况)     Copyfiles(把代码拷进相应的机器人上)
+</code></pre><h2 id="libbhuman"><a href="#libbhuman" class="headerlink" title="libbhuman"></a>libbhuman</h2><h2 id="libgamectrl"><a href="#libgamectrl" class="headerlink" title="libgamectrl"></a>libgamectrl</h2><pre><code>一个共享库，用来与GameController通讯
+</code></pre><h2 id="libqxt"><a href="#libqxt" class="headerlink" title="libqxt"></a>libqxt</h2><h2 id="Nao"><a href="#Nao" class="headerlink" title="Nao"></a>Nao</h2><h2 id="qtpropertybrowse"><a href="#qtpropertybrowse" class="headerlink" title="qtpropertybrowse"></a>qtpropertybrowse</h2><h2 id="SimRobot"><a href="#SimRobot" class="headerlink" title="SimRobot"></a><strong>SimRobot</strong></h2><h3 id="1、SimRobotCore-与平台无关"><a href="#1、SimRobotCore-与平台无关" class="headerlink" title="1、SimRobotCore (与平台无关)"></a>1、SimRobotCore (与平台无关)</h3><pre><code>Robots        Enviroemnt        Simulates Sensor Readings        Executes Commands
+</code></pre><h3 id="2、GUI"><a href="#2、GUI" class="headerlink" title="2、GUI"></a>2、GUI</h3><pre><code>展示        交互
+</code></pre><h3 id="3、Controller-控制模拟机器人的运动"><a href="#3、Controller-控制模拟机器人的运动" class="headerlink" title="3、Controller (控制模拟机器人的运动)"></a>3、Controller (控制模拟机器人的运动)</h3><h3 id="4、SimRobots程序-模拟软件的可执行程序"><a href="#4、SimRobots程序-模拟软件的可执行程序" class="headerlink" title="4、SimRobots程序 (模拟软件的可执行程序)"></a>4、SimRobots程序 (模拟软件的可执行程序)</h3><h3 id="5、Scene描述文件"><a href="#5、Scene描述文件" class="headerlink" title="5、Scene描述文件"></a>5、Scene描述文件</h3><pre><code>描述环境        描述上下文        描述机器人
+采用XML(RoSiML)描述，而不是代码描述
+</code></pre><h2 id="SimRobotCore2"><a href="#SimRobotCore2" class="headerlink" title="SimRobotCore2"></a>SimRobotCore2</h2><h2 id="SimRobotEditor"><a href="#SimRobotEditor" class="headerlink" title="SimRobotEditor"></a>SimRobotEditor</h2><h2 id="SimRobotHelper"><a href="#SimRobotHelper" class="headerlink" title="SimRobotHelper"></a>SimRobotHelper</h2><h2 id="SimulatedNAO"><a href="#SimulatedNAO" class="headerlink" title="SimulatedNAO"></a>SimulatedNAO</h2><h2 id="SpecialActions"><a href="#SpecialActions" class="headerlink" title="SpecialActions"></a>SpecialActions</h2><h2 id="URC"><a href="#URC" class="headerlink" title="URC"></a>URC</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Bhuman/" rel="tag"># Bhuman</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/17/sayings/" rel="next" title="sayings">
+                <i class="fa fa-chevron-left"></i> sayings
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">chenfanghui</p>
+              <p class="site-description motion-element" itemprop="description">Hi, I'm Jane, I'm simple.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+           
+              
+  
+  <div class="site-state-item site-state-categories">
+    
+      <span class="site-state-item-count">1</span>
+      <span class="site-state-item-name">分类</span>
+    
+  </div>
+
+
+
+  
+  
+  <div class="site-state-item site-state-tags">
+    
+      <span class="site-state-item-count">2</span>
+      <span class="site-state-item-name">标签</span>
+    
+  </div>
+
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#动作相关的几个引擎"><span class="nav-number">1.</span> <span class="nav-text">动作相关的几个引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArmMotionEngine"><span class="nav-number">1.0.1.</span> <span class="nav-text">ArmMotionEngine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GetUpEngine"><span class="nav-number">1.0.2.</span> <span class="nav-text">GetUpEngine</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工具"><span class="nav-number">2.</span> <span class="nav-text">工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SimRobot-虚拟环境"><span class="nav-number">2.1.</span> <span class="nav-text">SimRobot (虚拟环境)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bush"><span class="nav-number">2.2.</span> <span class="nav-text">Bush</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GameController-担当裁判的功能"><span class="nav-number">2.3.</span> <span class="nav-text">GameController (担当裁判的功能)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BHuman的使用"><span class="nav-number">3.</span> <span class="nav-text">BHuman的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在NAO中部署libhuamn"><span class="nav-number">3.1.</span> <span class="nav-text">在NAO中部署libhuamn</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、准备NaoQi"><span class="nav-number">3.1.1.</span> <span class="nav-text">1、准备NaoQi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、创建配置"><span class="nav-number">3.1.2.</span> <span class="nav-text">2、创建配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、管理无线网络配置"><span class="nav-number">3.1.3.</span> <span class="nav-text">3、管理无线网络配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、安装-编辑器sublime、JAVA环境等"><span class="nav-number">3.1.4.</span> <span class="nav-text">4、安装(编辑器sublime、JAVA环境等)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、将编译好的代码拷贝到NAO中"><span class="nav-number">3.1.5.</span> <span class="nav-text">5、将编译好的代码拷贝到NAO中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、控制NAO中的Bhuman"><span class="nav-number">3.1.6.</span> <span class="nav-text">6、控制NAO中的Bhuman</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SimRobot的使用"><span class="nav-number">3.2.</span> <span class="nav-text">SimRobot的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#机器人的校准"><span class="nav-number">3.3.</span> <span class="nav-text">机器人的校准</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、颜色校准"><span class="nav-number">3.3.1.</span> <span class="nav-text">1、颜色校准</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、场地校准"><span class="nav-number">3.3.2.</span> <span class="nav-text">2、场地校准</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、关节校准"><span class="nav-number">3.3.3.</span> <span class="nav-text">3、关节校准</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动NaoQi和Bhuman"><span class="nav-number">3.4.</span> <span class="nav-text">启动NaoQi和Bhuman</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心概念"><span class="nav-number">3.5.</span> <span class="nav-text">核心概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Module"><span class="nav-number">3.5.1.</span> <span class="nav-text">Module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Representation"><span class="nav-number">3.5.2.</span> <span class="nav-text">Representation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Configuration"><span class="nav-number">3.5.3.</span> <span class="nav-text">Configuration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#几个关注点"><span class="nav-number">3.6.</span> <span class="nav-text">几个关注点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通讯机制-Message-Queues"><span class="nav-number">3.6.1.</span> <span class="nav-text">通讯机制(Message Queues)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、Inter-process-communication"><span class="nav-number">3.6.1.1.</span> <span class="nav-text">1、Inter-process communication</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、debug-communication"><span class="nav-number">3.6.1.2.</span> <span class="nav-text">2、debug communication</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、team-communication"><span class="nav-number">3.6.1.3.</span> <span class="nav-text">3、team communication</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">3.6.2.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#映射"><span class="nav-number">3.6.2.1.</span> <span class="nav-text">映射</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BHuman的工作方式"><span class="nav-number">3.7.</span> <span class="nav-text">BHuman的工作方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cognition-认知系统"><span class="nav-number">3.7.1.</span> <span class="nav-text">Cognition(认知系统)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、Perception-感知子系统"><span class="nav-number">3.7.1.1.</span> <span class="nav-text">1、Perception(感知子系统)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、Model-模型子系统"><span class="nav-number">3.7.1.2.</span> <span class="nav-text">2、Model(模型子系统)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、Behavior-Control-行为控制子系统"><span class="nav-number">3.7.1.3.</span> <span class="nav-text">3、Behavior Control(行为控制子系统)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Motion-运动系统"><span class="nav-number">3.7.2.</span> <span class="nav-text">Motion(运动系统)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、Sensing（数据采集"><span class="nav-number">3.7.2.1.</span> <span class="nav-text">1、Sensing（数据采集)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、Motion-Control-关节控制"><span class="nav-number">3.7.2.2.</span> <span class="nav-text">2、Motion Control (关节控制)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统结构"><span class="nav-number">4.</span> <span class="nav-text">系统结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Controller"><span class="nav-number">4.1.</span> <span class="nav-text">Controller</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具集"><span class="nav-number">4.2.</span> <span class="nav-text">工具集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#libbhuman"><span class="nav-number">4.3.</span> <span class="nav-text">libbhuman</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#libgamectrl"><span class="nav-number">4.4.</span> <span class="nav-text">libgamectrl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#libqxt"><span class="nav-number">4.5.</span> <span class="nav-text">libqxt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nao"><span class="nav-number">4.6.</span> <span class="nav-text">Nao</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#qtpropertybrowse"><span class="nav-number">4.7.</span> <span class="nav-text">qtpropertybrowse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SimRobot"><span class="nav-number">4.8.</span> <span class="nav-text">SimRobot</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、SimRobotCore-与平台无关"><span class="nav-number">4.8.1.</span> <span class="nav-text">1、SimRobotCore (与平台无关)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、GUI"><span class="nav-number">4.8.2.</span> <span class="nav-text">2、GUI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、Controller-控制模拟机器人的运动"><span class="nav-number">4.8.3.</span> <span class="nav-text">3、Controller (控制模拟机器人的运动)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、SimRobots程序-模拟软件的可执行程序"><span class="nav-number">4.8.4.</span> <span class="nav-text">4、SimRobots程序 (模拟软件的可执行程序)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、Scene描述文件"><span class="nav-number">4.8.5.</span> <span class="nav-text">5、Scene描述文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SimRobotCore2"><span class="nav-number">4.9.</span> <span class="nav-text">SimRobotCore2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SimRobotEditor"><span class="nav-number">4.10.</span> <span class="nav-text">SimRobotEditor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SimRobotHelper"><span class="nav-number">4.11.</span> <span class="nav-text">SimRobotHelper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SimulatedNAO"><span class="nav-number">4.12.</span> <span class="nav-text">SimulatedNAO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpecialActions"><span class="nav-number">4.13.</span> <span class="nav-text">SpecialActions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URC"><span class="nav-number">4.14.</span> <span class="nav-text">URC</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chenfanghui</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

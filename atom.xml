@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sisterChen.github.io/"/>
-  <updated>2018-07-01T10:55:00.296Z</updated>
+  <updated>2018-07-02T12:10:32.639Z</updated>
   <id>https://sisterChen.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>a robot connects with a routiner</title>
+    <link href="https://sisterChen.github.io/2018/07/03/a-robot-connects-with-a-routiner/"/>
+    <id>https://sisterChen.github.io/2018/07/03/a-robot-connects-with-a-routiner/</id>
+    <published>2018-07-02T22:14:28.000Z</published>
+    <updated>2018-07-02T12:10:32.639Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="（一）配置路由器"><a href="#（一）配置路由器" class="headerlink" title="（一）配置路由器"></a>（一）配置路由器</h1><h2 id="1、查看DHCP服务器中的IP地址："><a href="#1、查看DHCP服务器中的IP地址：" class="headerlink" title="1、查看DHCP服务器中的IP地址："></a>1、查看DHCP服务器中的IP地址：</h2><pre><code>路由器默认自动分配的IP地址在    192.168.1.100~192.168.1.199</code></pre><p><img src="http://a2.qpic.cn/psb?/V11tdl404OQmio/eY99aRGu4kvgb89Kr3mwSnIhd.CmYaIOiNH3nkVIXl8!/m/dDEBAAAAAAAAnull&amp;bo=*gIhAgAAAAADB*0!&amp;rf=photolist&amp;t=5" alt=""></p><h2 id="2、机器人刷机（网线）后IP地址："><a href="#2、机器人刷机（网线）后IP地址：" class="headerlink" title="2、机器人刷机（网线）后IP地址："></a>2、机器人刷机（网线）后IP地址：</h2><pre><code>如 192.168.3.2</code></pre><h3 id="！此时路由器不能连接机器人"><a href="#！此时路由器不能连接机器人" class="headerlink" title="！此时路由器不能连接机器人"></a>！此时路由器不能连接机器人</h3><h2 id="3、手动配置DHCP服务器，将地址池地址放大"><a href="#3、手动配置DHCP服务器，将地址池地址放大" class="headerlink" title="3、手动配置DHCP服务器，将地址池地址放大"></a>3、手动配置DHCP服务器，将地址池地址放大</h2><pre><code>如 192.168.3.199</code></pre><h3 id="！此时有错误提示：地址池结束地址非法"><a href="#！此时有错误提示：地址池结束地址非法" class="headerlink" title="！此时有错误提示：地址池结束地址非法"></a>！此时有错误提示：地址池结束地址非法</h3><p><img src="http://a2.qpic.cn/psb?/V11tdl404OQmio/PbejrTiIgpoLmKO7iBlXlQDkFK27Rq1nEHwySLJ3Te8!/m/dC0BAAAAAAAAnull&amp;bo=9AIkAgAAAAADB*I!&amp;rf=photolist&amp;t=5" alt=""></p><h2 id="4、更改路由器的LAN口设置"><a href="#4、更改路由器的LAN口设置" class="headerlink" title="4、更改路由器的LAN口设置"></a>4、更改路由器的LAN口设置</h2><pre><code>因此时子网掩码为255.255.255.0，故路由器分配的合法IP必须为192.168.1.*格式更改掩码为255.255.0.0，即可重新配置DHCP服务器中地址池结束地址</code></pre><p><img src="http://a2.qpic.cn/psb?/V11tdl404OQmio/3fuMwjkmqnm4hhLdAhxHNfWGe921Jxx*txDAywMt6xU!/m/dEUBAAAAAAAAnull&amp;bo=.AIfAgAAAAADB8U!&amp;rf=photolist&amp;t=5" alt=""></p><h2 id="5、DCHP服务器地址池结束地址改为：如192-168-3-199"><a href="#5、DCHP服务器地址池结束地址改为：如192-168-3-199" class="headerlink" title="5、DCHP服务器地址池结束地址改为：如192.168.3.199"></a>5、DCHP服务器地址池结束地址改为：如192.168.3.199</h2><h1 id="（二）问题来了：如何让机器人记住无线网络？"><a href="#（二）问题来了：如何让机器人记住无线网络？" class="headerlink" title="（二）问题来了：如何让机器人记住无线网络？"></a>（二）问题来了：如何让机器人记住无线网络？</h1><h2 id="在Install-Network-Profiles-default中设置"><a href="#在Install-Network-Profiles-default中设置" class="headerlink" title="在Install/Network/Profiles/default中设置"></a><em>在Install/Network/Profiles/default中设置</em></h2><pre><code>在network下，更改：ssid=&quot;无线网名称&quot;，psk=&quot;无线网密码&quot;</code></pre><h1 id="△-以上更改在机器人刷机前完成，即在-installRobot-192-168-x-y前完成"><a href="#△-以上更改在机器人刷机前完成，即在-installRobot-192-168-x-y前完成" class="headerlink" title="△ 以上更改在机器人刷机前完成，即在./installRobot 192.168.x.y前完成"></a><strong>△ 以上更改在机器人刷机前完成，即在./installRobot 192.168.x.y前完成</strong></h1><h1 id="（三）刷机后，无线网络分配给机器人的IP为：10-0-x-y-x-队伍号、y-成员号"><a href="#（三）刷机后，无线网络分配给机器人的IP为：10-0-x-y-x-队伍号、y-成员号" class="headerlink" title="（三）刷机后，无线网络分配给机器人的IP为：10.0.x.y(x:队伍号、y:成员号)"></a>（三）刷机后，无线网络分配给机器人的IP为：<strong>10.0.x.y(x:队伍号、y:成员号)</strong></h1><h1 id="（四）更改电脑的网络配置"><a href="#（四）更改电脑的网络配置" class="headerlink" title="（四）更改电脑的网络配置"></a>（四）更改电脑的网络配置</h1><pre><code>编辑新以太网，在IPv4设置-手动，地址：10.0.7.8，子网掩码：16</code></pre><p><img src="http://a2.qpic.cn/psb?/V11tdl404OQmio/*S1fpNl1TZDM47T1HjUvjZnGGPeYdpkv82IshbExoEc!/m/dFUAAAAAAAAAnull&amp;bo=ggEFAgAAAAADB6Y!&amp;rf=photolist&amp;t=5" alt=""></p><h1 id="（五）-copyfiles-Develop后IP是10-0-x-y，而非192-168-x-y"><a href="#（五）-copyfiles-Develop后IP是10-0-x-y，而非192-168-x-y" class="headerlink" title="（五）./copyfiles Develop后IP是10.0.x.y，而非192.168.x.y"></a>（五）./copyfiles Develop后IP是<strong>10.0.x.y</strong>，而非<em>192.168.x.y</em></h1>]]></content>
+    
+    <summary type="html">
+    
+      机器人连接路由器及机器人通过路由器刷机
+    
+    </summary>
+    
+      <category term="home" scheme="https://sisterChen.github.io/categories/home/"/>
+    
+    
+      <category term="Bhuman_connection" scheme="https://sisterChen.github.io/tags/Bhuman-connection/"/>
+    
+  </entry>
   
   <entry>
     <title>Modules and representations</title>
